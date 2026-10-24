@@ -641,8 +641,11 @@
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 2rem;
+        }
+        @media (max-width: 800px) {
+            .project-grid { grid-template-columns: minmax(0, 1fr); }
         }
         .project-card { display: flex; flex-direction: column; padding: 2.2rem; }
         .project-card:hover { transform: translateY(-8px); }
@@ -1166,7 +1169,7 @@
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
-                <a href="#achievements">Achievements</a>
+                <a href="#achievements">Credentials</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
                 <a href="resume.pdf" target="_blank" class="resume-btn">Resume</a>
@@ -1197,7 +1200,7 @@
 
         <div class="hero-image bento reveal">
             <div class="profile-container">
-                <img src="profile.jpeg" alt="Pranjal Mishra" class="profile-pic">
+                <img src="profile.jpg" alt="Pranjal Mishra" class="profile-pic">
             </div>
         </div>
 
@@ -1210,7 +1213,7 @@
     <section id="snapshot">
         <div class="stats-grid">
             <div class="card stat reveal"><strong class="count" data-to="2">2</strong><span>Internships</span></div>
-            <div class="card stat reveal"><strong class="count" data-to="2">2</strong><span>Projects</span></div>
+            <div class="card stat reveal"><strong class="count" data-to="4">4</strong><span>Projects</span></div>
             <div class="card stat reveal"><strong class="count" data-to="1">1</strong><span>Hackathon</span></div>
             <div class="card stat reveal"><strong class="count" data-to="7.7" data-dec="1">7.7</strong><span>CGPA</span></div>
         </div>
@@ -1237,6 +1240,58 @@
                         <li>Trained, tuned and evaluated Linear Regression and Random Forest Regressor models</li>
                         <li>Improved RMSE and R&sup2; scores through model tuning</li>
                         <li>Built Matplotlib visuals of demand trends, seasonal peaks and SKU performance for stakeholders</li>
+                    </ol>
+                </div>
+                <!-- TODO: replace with this project's own GitHub repository link -->
+                <a href="https://github.com/mishrapranjal879" target="_blank" rel="noopener" class="btn-sm">View on GitHub &rarr;</a>
+            </div>
+            <div class="card project-card reveal">
+                <span class="company-tag">NLP &middot; Machine Learning Project</span>
+                <h4>Text Emotion Classification using NLP</h4>
+                <p>An NLP and machine learning project that detects and classifies emotions such as sadness, anger, love and joy from text messages and tweets.</p>
+                <div class="skills-list" style="margin-top: 1.5rem;">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">Bag of Words</span>
+                    <span class="skill-tag">TF-IDF</span>
+                </div>
+                <div class="how-it-works">
+                    <span class="how-label">Highlights</span>
+                    <ol class="how-steps">
+                        <li>Cleaned raw text (lowercasing, punctuation removal) and encoded emotion labels numerically</li>
+                        <li>Converted text to vectors using CountVectorizer (BoW) and TfidfVectorizer (TF-IDF)</li>
+                        <li>Compared models: Naive Bayes (BoW) ~73.91%, Naive Bayes (TF-IDF) ~61.75%</li>
+                        <li>Logistic Regression with TF-IDF performed best at ~84.13% accuracy</li>
+                    </ol>
+                </div>
+                <!-- TODO: replace with this project's own GitHub repository link -->
+                <a href="https://github.com/mishrapranjal879" target="_blank" rel="noopener" class="btn-sm">View on GitHub &rarr;</a>
+            </div>
+            <div class="card project-card reveal">
+                <span class="company-tag">Data Analytics Project</span>
+                <h4>Crop Yield Analytics & Prediction System</h4>
+                <p>An agricultural data analytics and ML project that analyzes and predicts crop yield (tons per hectare) from soil nutrients, climate and geography.</p>
+                <div class="skills-list" style="margin-top: 1.5rem;">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">Statsmodels</span>
+                    <span class="skill-tag">XGBoost</span>
+                </div>
+                <div class="how-it-works">
+                    <span class="how-label">Highlights</span>
+                    <ol class="how-steps">
+                        <li>Checked data integrity and prepared the dataset for analysis</li>
+                        <li>Studied distributions and outliers with KDE, histograms, box plots, count and pie plots</li>
+                        <li>Explored N, P, K, soil pH, rainfall, temperature and area against yield using scatter plots, pair plots and stacked bars</li>
+                        <li>Compared yield across states and crops, with summary stats including skewness</li>
                     </ol>
                 </div>
                 <!-- TODO: replace with this project's own GitHub repository link -->
@@ -1318,14 +1373,32 @@
     </section>
 
     <section id="achievements">
-        <h3 class="section-title reveal" data-index="04">Certifications & Extracurriculars</h3>
+        <h3 class="section-title reveal" data-index="04">Verified Credentials</h3>
         <div class="cert-list">
+            <!-- TODO: put each certificate PDF next to index.html with the file name used in href (or replace href with the official verification link) -->
+            <div class="card reveal">
+                <div>
+                    <span class="company-tag">Amazon Web Services &middot; Jan &ndash; Mar 2025</span>
+                    <h4>AWS AI-Powered Cloud Engineer Internship</h4>
+                    <p>Virtual internship covering cloud-hosted machine learning workflows and AI services on AWS.</p>
+                </div>
+                <a href="aws_cert.pdf" target="_blank" rel="noopener" class="btn-sm">Verify Credential &rarr;</a>
+            </div>
+            <div class="card reveal">
+                <div>
+                    <span class="company-tag">Acmegrade &middot; Jan &ndash; Feb 2025</span>
+                    <h4>Web Development Internship</h4>
+                    <p>Virtual internship on responsive web components, version control, debugging and hosting.</p>
+                </div>
+                <a href="acmegrade_cert.pdf" target="_blank" rel="noopener" class="btn-sm">Verify Credential &rarr;</a>
+            </div>
             <div class="card reveal">
                 <div>
                     <span class="company-tag">Hackathon &middot; October 2025</span>
                     <h4>National Hackathon Participant</h4>
                     <p>Participated in a 30-hour national hackathon at Shivalik College of Engineering, Dehradun, Uttarakhand.</p>
                 </div>
+                <a href="hackathon_cert.pdf" target="_blank" rel="noopener" class="btn-sm">Verify Credential &rarr;</a>
             </div>
         </div>
     </section>
@@ -1399,9 +1472,7 @@
                 </div>
             </div>
 
-            
-        </div>
-    </section>
+           
 
     <footer>
         <div class="social-row">
